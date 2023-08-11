@@ -1,0 +1,33 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        int[] arr={3,4,2,1,5};
+        int[] ans=sort(arr);
+        System.out.println("The sorted array is");
+        for(int i=0;i<ans.length;i++)
+        {
+            System.out.print(ans[i]+" ");
+        }
+    }
+    public static int[] sort(int[] arr)
+    {
+        int i=0;
+        while(i<arr.length)
+        {
+            int correct=arr[i]-1;
+            if(arr[correct]!=arr[i])
+            {
+                int temp=arr[correct];
+                arr[correct]=arr[i];
+                arr[i]= temp;
+            }
+            else
+            {
+                i++;
+            }
+        }
+        return arr;
+    }
+}
