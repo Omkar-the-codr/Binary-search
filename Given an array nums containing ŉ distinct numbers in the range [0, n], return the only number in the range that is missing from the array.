@@ -1,0 +1,47 @@
+class HelloWorld {
+    public static void main(String[] args) {
+        int[] arr={3,4,2,1,1};
+        int[] ans=sort(arr);
+        System.out.println("The sorted array is");
+        for(int i=0;i<ans.length;i++)
+        {
+            System.out.print(ans[i]+" ");
+        }
+        int num=find(ans);
+        System.out.println("The number not present is"+num);
+    }
+    public static int[] sort(int[] arr)
+    {
+        int i=0;
+        while(i<arr.length)
+        {
+            int correct=arr[i]-1;
+            if(arr[correct]!=arr[i])
+            {
+                int temp=arr[correct];
+                arr[correct]=arr[i];
+                arr[i]= temp;
+            }
+            else
+            {
+                i++;
+            }
+        }
+        return arr;
+    }
+    public static int find(int[] ans)
+    {
+        int findy=0;
+        for(int i=0;i<ans.length;i++)
+        {
+            if(ans[i]!=i+1)
+            {
+            findy=i+1;
+                break;
+            }
+            else
+            continue;
+        }
+        return findy;
+    }
+}
