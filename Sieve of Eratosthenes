@@ -1,0 +1,26 @@
+// This algorithm focuses maninly on finding prime numbers smaller than a given number, this algorithm is called sieve of erotosthenes.
+class HelloWorld {
+    public static void main(String[] args) {
+        int n=40;
+        boolean[] a=new boolean[n+1];
+        sieve(n,a);
+    }
+    public static void sieve(int n, boolean[] a)
+    {
+        for(int i=2;i*i<=n;i++) //loop from 2 to n and with condition checking 
+        {                       // if the square of number is less than upper 
+        if(a[i]==false)         //limit
+        {
+            for(int j=i*2;j<=n;j+=i)// loop to set all the multiples of prime
+            {                      // number to true leaving all other prime
+                a[j]=true;      // numbers to false
+            }
+        }
+        }
+        for( int i=2;i<n;i++) // loop to print the prime numbers left false 
+        {
+            if(a[i]==false)
+            System.out.println(i+" ");
+        }
+    }
+}
