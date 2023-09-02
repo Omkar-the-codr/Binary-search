@@ -1,0 +1,23 @@
+public class helloworld {
+        public static void main(String[] args)
+        {
+            pyramid(4,0);
+        }
+         static void pyramid(int r,int c)
+        {
+            if(r==0)
+            {
+                return;
+            }
+            if(r>c)
+            {
+                pyramid(r,c+1);
+                System.out.print("*");
+            }
+            else
+            {
+                pyramid(r-1, 0);
+                System.out.println();
+            }
+        }
+    }
